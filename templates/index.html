@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Book of MBTI</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="icon" type="image/png" href="../static/image/favicon.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>  
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- 确定有用的-->
+    <link href="../static/css/product_entries.css" rel="stylesheet" id="product-entry">
+    <link href="../static/css/theme.css" rel="stylesheet" id="style-default">
+    <link href="../static/css/tab.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+
+    <!--    Navigator-->
+    <main class="main" id="top">
+      <div class="bg-white">
+        <div class="content">
+
+          <nav class="navbar navbar-expand-lg py-1" id="navbar-top" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
+            <div class="container"><a class="navbar-brand me-lg-auto cursor-pointer" href=""><img class="w-50 w-md-100 img-fluid" src="../static/image/logo.png" alt="" /></a>
+              <button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent" data-navbar-collapse="data-navbar-collapse">
+                <div class="container d-lg-flex justify-content-lg-end pe-lg-0 w-lg-100">
+                  <ul class="navbar-nav mt-2 mt-lg-1 ms-lg-4 ms-xl-8 ms-2xl-9 gap-lg-x1" data-navbar-nav="data-navbar-nav">
+                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#Home" title="home">Home</a></li>
+                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#Prediction" title="prediction">Predictor</a></li>
+                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#About" title="About">About</a></li>
+                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#Introduction" title="MBTIs">MBTIs</a></li>
+                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#Data" title="Data">Exploration</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <!--    Home-->
+          <section id="Home" style="height: 100vh; background-image: url(../static/image/Home.svg); background-size: cover; background-position: center;">
+            <div class="intro-overlay"></div> <!-- 添加覆盖层 -->
+            <div class="intro-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <div class="container" style="text-align: center;"> <!-- 添加 text-align 属性 -->
+                <p class="animate__animated animate__fadeInUp" style="font-size: 5rem; background-image: linear-gradient(to right, #4298b4, #76c5d9); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><span class="fw-bold">BOOK OF MBTI</span></p>
+                <h2 class="animate__animated animate__fadeInUp" style="font-size: 2rem; background-image: linear-gradient(to right, #4298b4, #76c5d9); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Answer to the Connection between Words and Personalities</h2>
+              </div>
+              <div class="d-flex justify-content-center" style="margin-top: 40px;">
+                <a href="#Prediction">
+                  <button class="animate__animated animate__fadeInDown btn btn-gradient fs-8 d-inline-flex">
+                    <span>Have a Try</span><span class="uil uil-arrow-right"></span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </section>
+
+
+          <div class="container" data-bs-target="#navbar-top" data-bs-spy="scroll" tabindex="0">
+
+            <!--    Prediction-->
+            <section class="mb-9 mb-lg-10 mb-xxl-11 text-center text-lg-start mt-1" id="Prediction">
+              <div class="row g-4 g-lg-6 g-xl-7 pt-6" style="margin-top: 3px;">
+                <div class="d-none d-lg-block col-lg-6 text-center"><img class="img-fluid" src="../static/image/banner1.png" alt="" /></div>
+                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center mt-0">
+                  <h1 class="fs-5 fs-lg-4 fs-xl-3 text-secondary text-capitalize fw-light mt-2 mb-2">
+                    What is the character's <span class="fw-bold">MBTI?</span></h1>
+                  <p class="text-success fs-8 fs-lg-7 text-capitalize beginner-guide my-3">Enter the Words <span class="fw-bold">in English</span> </p>
+                  <form method="POST" onsubmit="handleSubmit(event)" class="d-flex flex-column">
+                    <div class="input-group position-relative">
+                      <textarea class="form-control prediction-input" placeholder="the words of the character..." id="input" name="input" rows="4"></textarea>
+                    </div>
+                    <div class="mt-3">
+                      <button class="btn btn-gradient fs-8 d-inline-flex">
+                        <span>Submit and Wait 5-10s</span>
+                        <span class="uil uil-arrow-right" type="submit"></span>
+                      </button>
+                  </form>
+                </div>
+              </div>
+            </section>
+
+            <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header --aranyak-light text-white">
+                    <h5 class="modal-title" id="resultModalLabel">Prediction Result: <span id="outputResult"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p><span id="outputText"></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function handleSubmit(event) {
+                event.preventDefault();
+                var input = document.getElementById("input");
+                var inputValue = input.value;
+          
+                fetch('/process', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                  },
+                  body: 'input=' + encodeURIComponent(inputValue)
+                })
+                .then(response => response.text())
+                .then(result => {
+                    var outputResult = document.getElementById("outputResult");
+                    var outputText = document.getElementById("outputText");
+
+                    outputResult.textContent = result;
+                    outputText.textContent = "Your MBTI Prediction result is:" + result;
+
+                    var resultModal = new bootstrap.Modal(document.getElementById("resultModal"));
+                    resultModal.show();
+                  })
+                .catch(error => {
+                  console.error('Error:', error);
+                });
+              }
+            </script>
+
+            <!--    About-->
+            <section class="mb-9 mb-lg-10 mb-xxl-11 text-center text-lg-start mt-9" id="About">
+              <div>
+                <div class="row g-4 g-lg-6 g-xl-7 align-items-center">
+                  <div class="col-12 col-lg-6 order-1 order-lg-0">
+                    <p class="fs-8 fs-md-7 fs-xxl-6 text-success fw-bold mb-x1 text-capitalize">About </p>
+                    <h1 class="fs-5 fs-md-3 fs-xxl-2 text-black fw-light mb-4">Interpret <span class="fw-bold"> Thoughts </span><br class="d-sm-none d-md-block d-xxl-none" />with<br/><span class="text-gradient fw-bold">Book of MBTI</span></h1>
+                    <p class="fs-8 fs-md-11 fs-xxl-7 text-primary mb-5 mb-lg-6 mb-xl-7 fw-light">
+                    Type in sentences and interpret personalities through emotions and attitudes to learn about self or others, friends or characters, creatures or imagery.
+                    </p>
+                    <a href="#Introduction">
+                            <button class="btn btn-gradient fs-8 d-inline-flex">
+                      <span>Explore MBTI Types</span><span class="uil uil-arrow-right"></span></button>
+                    </a>
+                  </div>
+                  <div class="col-12 col-lg-6 order-0 order-lg-1"><img class="img-fluid w-50 w-lg-100" src="../static/image/talking.png" alt="" /></div>
+                </div>
+              </div>
+            </section>
+            
+
+            <!--    MBTIs Introduction-->
+            <section class="mb-9 mb-lg-10 mb-xxl-11 text-center text-md-start" id="Introduction">
+              <h3 class="mb-x1 fs-8 fs-md-7 fs-xxl-6 text-success fw-bold pt-6">16 Personality Types </h3>
+
+              <div class="mb-6 mb-lg-7 mb-xl-10" id="slider-1">
+                <h1 class="fs-5 fs-md-3 fs-xxl-2 text-capitalize fw-light" style= color:#88619a> <span class="fw-bold"></span>Analysts</h1>
+                <div class="mb-4 mb-lg-0">
+
+                  <div class="row">
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/intj-personality" class="product-entry">
+                        <div class="prod-img" data-text="INTJ (Architect) is a personality type with the Introverted, Intuitive, Thinking, and Judging traits. These thoughtful tacticians love perfecting the details of life, applying creativity and rationality to everything they do. Their inner world is often a private, complex one.">
+                          <img src="../static/image/intj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#dbbfdd80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#88619a;">INTJ-A/INTJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/intp-personality" class="product-entry">
+                        <div class="prod-img" data-text="INTP (Logician) is a personality type with the Introverted, Intuitive, Thinking, and Prospecting traits. These flexible thinkers enjoy taking an unconventional approach to many aspects of life. They often seek out unlikely paths, mixing willingness to experiment with personal creativity.">
+                          <img src="../static/image/intp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#dbbfdd80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#88619a;">INTP-A/INTP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/entj-personality" class="product-entry">
+                        <div class="prod-img" data-text="ENTJ (Commander) is a personality type with the Extraverted, Intuitive, Thinking, and Judging traits. They are decisive people who love momentum and accomplishment. They gather information to construct their creative visions but rarely hesitate for long before acting on them.">
+                          <img src="../static/image/entj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#dbbfdd80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#88619a;">ENTJ-A/ENTJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/entp-personality" class="product-entry">
+                        <div class="prod-img" data-text="ENTP (Debater) is a personality type with the Extraverted, Intuitive, Thinking, and Prospecting traits. They tend to be bold and creative, deconstructing and rebuilding ideas with great mental agility. They pursue their goals vigorously despite any resistance they might encounter.">
+                          <img src="../static/image/entp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#dbbfdd80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#88619a;">ENTP-A/ENTP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mb-6 mb-lg-7 mb-xl-10" id="slider-2">
+                <h1 class="fs-5 fs-md-3 fs-xxl-2 text-capitalize text-md-end fw-light" style= color:#33a474> <span class="fw-bold"></span><br class="d-sm-none" />Diplomats</h1>
+                <div class="mb-4 mb-lg-0">
+
+                  <div class="row">
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/infj-personality" class="product-entry">
+                        <div class="prod-img" data-text="INFJ (Advocate) is a personality type with the Introverted, Intuitive, Feeling, and Judging traits. They tend to approach life with deep thoughtfulness and imagination. Their inner vision, personal values, and a quiet, principled version of humanism guide them in all things.">
+                          <img src="../static/image/infj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#c0ddbf80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#33a474;">INFJ-A/INFJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/infp-personality" class="product-entry">
+                        <div class="prod-img" data-text="INFP (Mediator) is a personality type with the Introverted, Intuitive, Feeling, and Prospecting traits. These rare personality types tend to be quiet, open-minded, and imaginative, and they apply a caring and creative approach to everything they do.">
+                          <img src="../static/image/infp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#c0ddbf80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#33a474;">INFP-A/INFP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/enfj-personality" class="product-entry">
+                        <div class="prod-img" data-text="ENFJ (Protagonist) is a personality type with the Extraverted, Intuitive, Feeling, and Judging traits. These warm, forthright types love helping others, and they tend to have strong ideas and values. They back their perspective with the creative energy to achieve their goals.">
+                          <img src="../static/image/enfj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#c0ddbf80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#33a474;">ENFJ-A/ENFJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/enfp-personality" class="product-entry">
+                        <div class="prod-img" data-text="ENFP (Campaigner) is a personality type with the Extraverted, Intuitive, Feeling, and Prospecting traits. These people tend to embrace big ideas and actions that reflect their sense of hope and goodwill toward others. Their vibrant energy can flow in many directions.">
+                          <img src="../static/image/enfp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#c0ddbf80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#33a474;">ENFP-A/ENFP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-6 mb-lg-7 mb-xl-10" id="slider-3">
+                <h1 class="fs-5 fs-md-3 fs-xxl-2 text-capitalize fw-light" style=color:#4298b4><span class="fw-bold"></span><br class="d-sm-none" />Sentinels</h1>
+                <div class="mb-4 mb-lg-0">
+                  
+                  <div class="row">
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/istj-personality" class="product-entry">
+                        <div class="prod-img" data-text="ISTJ (Logistician) is a personality type with the Introverted, Observant, Thinking, and Judging traits. These people tend to be reserved yet willful, with a rational outlook on life. They compose their actions carefully and carry them out with methodical purpose.">
+                          <img src="../static/image/istj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#9ac7d380;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#4298b4;">ISTJ-A/ISTJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/isfj-personality" class="product-entry">
+                        <div class="prod-img" data-text="ISFJ (Defender) is a personality type with the Introverted, Observant, Feeling, and Judging traits. These people tend to be warm and unassuming in their own steady way. They're efficient and responsible, giving careful attention to practical details in their daily lives.">
+                          <img src="../static/image/isfj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#9ac7d380;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#4298b4;">ISFJ-A/ISFJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/estj-personality" class="product-entry">
+                        <div class="prod-img" data-text="ESTJ (Executive) is a personality type with the Extraverted, Observant, Thinking, and Judging traits. They possess great fortitude, emphatically following their own sensible judgment. They often serve as a stabilizing force among others, able to offer solid direction amid adversity.">
+                          <img src="../static/image/estj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#9ac7d380;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#4298b4;">ESTJ-A/ESTJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/esfj-personality" class="product-entry">
+                        <div class="prod-img" data-text="ESFJ (Consul) is a personality type with the Extraverted, Observant, Feeling, and Judging traits. They are attentive and people-focused, and they enjoy taking part in their social community. Their achievements are guided by decisive values, and they willingly offer guidance to others.">
+                          <img src="../static/image/esfj.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#9ac7d380;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#4298b4;">ESFJ-A/ESFJ-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mb-6 mb-lg-7 mb-xl-10" id="slider-4"> 
+                <h1 class="fs-5 fs-md-3 fs-xxl-2 text-capitalize text-md-end fw-light" style= color:#e4ae3a> <span class="fw-bold"></span><br class="d-sm-none" />Explorers</h1>
+                <div class="mb-4 mb-lg-0">
+                  
+                  <div class="row">
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/istp-personality" class="product-entry">
+                        <div class="prod-img" data-text="ISTP (Virtuoso) is a personality type with the Introverted, Observant, Thinking, and Prospecting traits. They tend to have an individualistic mindset, pursuing goals without needing much external connection. They engage in life with inquisitiveness and personal skill, varying their approach as needed.">
+                          <img src="../static/image/istp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#f2d38a80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#e4ae3a;">ISTP-A/ISTP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/isfp-personality" class="product-entry">
+                        <div class="prod-img" data-text="ISFP (Adventurer) is a personality type with the Introverted, Observant, Feeling, and Prospecting traits. They tend to have open minds, approaching life, new experiences, and people with grounded warmth. Their ability to stay in the moment helps them uncover exciting potentials.">
+                          <img src="../static/image/isfp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#f2d38a80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#e4ae3a;">ISFP-A/ISFP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/estp-personality" class="product-entry">
+                        <div class="prod-img" data-text="ESTP (Entrepreneur) is a personality type with the Extraverted, Observant, Thinking, and Prospecting traits. They tend to be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life' s opportunities, whether socializing with others or in more personal pursuits.">
+                          <img src="../static/image/estp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#f2d38a80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#e4ae3a;">ESTP-A/ESTP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-lg-3 mb-4 text-center">
+                      <a href="https://www.16personalities.com/esfp-personality" class="product-entry">
+                        <div class="prod-img" data-text="ESFP (Entertainer) is a personality type with the Extraverted, Observant, Feeling, and Prospecting traits. These people love vibrant experiences, engaging in life and taking pleasure in discovering the unknown. They can be very social, often encouraging others into shared activities.">
+                          <img src="../static/image/esfp.png" class="img-fluid">
+                        </div>
+                        <div class="desc" style="background-color:#f2d38a80;">
+                          <h2 class="fw-semi-bold fs-8 fs-md-11 fs-xxl-7" style="color:#e4ae3a;">ESFP-A/ESFP-T</h2>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                  <a href="https://www.16personalities.com/free-personality-test">
+                          <button class="btn btn-gradient fs-8 d-inline-flex">
+                    <span>Taking the Test</span><span class="uil uil-arrow-right"></span></button>
+                  </a>
+              </div>
+            </section>
+
+            
+
+
+            <!--    Visualization-->
+            <section class="mb-9 mb-lg-10 mb-xxl-11 text-center text-md-start" id="Data">
+              <h3 class="mb-x1 fs-8 fs-md-7 fs-xxl-6 text-success fw-bold pt-6">Data Exploration</h3>           
+
+                <!-- Tab Panel -->
+                <div class="container-fluid">
+                  <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="chart1-tab" data-bs-toggle="tab" data-bs-target="#chart1-content" type="button" role="tab" aria-controls="chart1-content" aria-selected="true">China vs Global</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="chart2-tab" data-bs-toggle="tab" data-bs-target="#chart2-content" type="button" role="tab" aria-controls="chart2-content" aria-selected="false">MBTIs in China</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="chart3-tab" data-bs-toggle="tab" data-bs-target="#chart3-content" type="button" role="tab" aria-controls="chart3-content" aria-selected="false">WordCloud</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <div class="tab-content">
+                      <div class="tab-pane fade show active" id="chart1-content" role="tabpanel" aria-labelledby="chart1-tab">
+                        <!-- 标签1对应的内容 -->
+                        <p>Number of Respondents in China: <span class="text-gradient fw-bold">84,915</span></p>
+                        <p>Some differences exist between Chinese and global MBTI data.</p>
+                        <div id="chart1" style="width: 100%; height: 400px; margin-top: 50px;"></div>
+                        <script>
+                          var data = [
+                            { type: 'INFP', global: 4.40, china: 10.63 },
+                            { type: 'ESFJ', global: 12.30, china: 10.16 },
+                            { type: 'ISFJ', global: 13.80, china: 9.52 },
+                            { type: 'ENFP', global: 8.10, china: 9.43 },
+                            { type: 'ISFP', global: 8.80, china: 8.41 },
+                            { type: 'ESFP', global: 8.50, china: 6.81 },
+                            { type: 'INTP', global: 3.30, china: 5.71 },
+                            { type: 'ENFJ', global: 2.50, china: 5.69 },
+                            { type: 'INFJ', global: 1.50, china: 5.60 },
+                            { type: 'ESTJ', global: 8.70, china: 5.41 },
+                            { type: 'ISTJ', global: 11.60, china: 4.74 },
+                            { type: 'ENTP', global: 2.70, china: 4.35 },
+                            { type: 'INTJ', global: 2.10, china: 3.74 },
+                            { type: 'ISTP', global: 5.40, china: 3.59 },
+                            { type: 'ESTP', global: 4.30, china: 3.20 },
+                            { type: 'ENTJ', global: 1.80, china: 3.03 }
+                          ];
+
+                          var types = data.map(item => item.type);
+                          var globalData = data.map(item => item.global);
+                          var chinaData = data.map(item => item.china);
+
+                          var chart1 = echarts.init(document.getElementById('chart1'));
+
+                          var option = {
+                              title: {
+                                      text: 'MBTI China VS Global'
+                                      },
+                              tooltip: {
+                                  trigger: 'axis',
+                                  axisPointer: {
+                                  type: 'shadow'
+                                  },
+                                  formatter: function(params) {
+                                var dataIndex = params[0].dataIndex;
+                                var globalValue = globalData[dataIndex];
+                                var chinaValue = chinaData[dataIndex];
+                                return params[0].name + '<br>' + 'Global: ' + globalValue.toFixed(2) + '%' + '<br>' + 'China: ' + chinaValue.toFixed(2) + '%';
+                              }
+                                  },
+                            legend: {
+                              data: ['Global', 'China']
+                            },
+                            grid: {
+                              left: '3%',
+                              right: '4%',
+                              bottom: '10%',
+                              containLabel: true
+                            },
+                            xAxis: {
+                              type: 'category',
+                              data: types
+                            },
+                            yAxis: {
+                              type: 'value',
+                              axisLabel: {
+                                formatter: '{value}%'
+                              }
+                            },
+                            series: [
+                              {
+                                name: 'China',
+                                type: 'bar',
+                                data: chinaData,
+                                itemStyle: {
+                                  color: '#FFE6AF'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'top',
+                                  formatter: '{c}%'
+                                }
+                              },
+                            {
+                                name: 'Global',
+                                type: 'bar',
+                                data: globalData,
+                                itemStyle: {
+                                  color: '#87CEEB'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'top',
+                                  formatter: '{c}%'
+                                }
+                              }
+                            ]
+                          };
+
+                          chart1.setOption(option);
+                          window.addEventListener('resize', function () {chart1.resize();});
+                        </script>
+                      </div>
+                      <div class="tab-pane fade" id="chart2-content" role="tabpanel" aria-labelledby="chart2-tab">
+                        <!-- 标签2对应的内容 -->
+                        <h4><span class="text-gradient fw-bold">MBTIs in China</span></h4>
+                        <p>Distribution of the Four Elements of MBTI in China</p>
+                        <div class="chart-container">
+                          <div class="chart-wrapper">
+                            <div id="chart21" class="chart2"></div>
+                            <div id="chart22" class="chart2"></div>
+                            <div id="chart23" class="chart2"></div>
+                            <div id="chart24" class="chart2"></div>
+                          </div>
+                          <div class="explainer-wrapper">
+                            <p class="chart-explanation">Introversion is slightly more prevalent than Extroversion.</p>
+                            <p class="chart-explanation">Sensing is minimally higher than Intuition.</p>
+                            <p class="chart-explanation">More people tend to Feeling than Thinking.</p>
+                            <p class="chart-explanation">Perceiving may be preferred than Judging in China.</p>
+                          </div>
+                        </div>
+                        
+                        <style>
+                        .chart-container {
+                          display: flex;
+                          justify-content: flex-start;
+                          flex-wrap: wrap;
+                        }
+                        
+                        .chart-wrapper {
+                          flex: 1;
+                        }
+                        
+                        .explainer-wrapper {
+                          flex: 0;
+                          min-width: 400px;
+                          margin-left: 10px; 
+                        }
+                        
+                        .chart2 {
+                          width: 600px;
+                          height: 80px;
+                          margin-bottom: 10px;
+                        }
+                        
+                        .chart-explanation {
+                          font-size: 14px;
+                          font-weight: bold;
+                          text-align: left;
+                          margin-top: 30px;
+                          margin-bottom: 30px;
+                        }
+                        </style>
+                        
+                        <script>
+                          var chart21 = echarts.init(document.getElementById('chart21'));
+                          var chart22 = echarts.init(document.getElementById('chart22'));
+                          var chart23 = echarts.init(document.getElementById('chart23'));
+                          var chart24 = echarts.init(document.getElementById('chart24'));
+
+                          var option21 = {
+                              tooltip: {
+                              trigger: 'axis',
+                              axisPointer: {
+                                type: 'shadow'
+                              },
+                              formatter: function(params) {
+                                var total = 0;
+                                params.forEach(function(item) {
+                                  total += item.value;
+                                });
+                                return params[0].name + '<br/>' + params[0].seriesName + ': ' + (params[0].value / total * 100).toFixed(2) + '%' +
+                                      '<br/>' + params[1].seriesName + ': ' + (params[1].value / total * 100).toFixed(2) + '%';
+                              }
+                            },                            
+                            grid: {
+                              left: '3%',
+                              right: '4%',
+                              bottom: '20px',
+                              top: '20px',
+                              containLabel: true
+                            },
+                            xAxis: {
+                              type: 'value',
+                              axisLabel: {
+                                formatter: '{value}%',
+                                show: false
+                              }
+                            },
+                            yAxis: {
+                              type: 'category',
+                              data: ['I-Type VS E-Type']
+                            },
+                            series: [
+                              {
+                                name: 'I-Type',
+                                type: 'bar',
+                                barWidth: 50, 
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#f7b62e'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [51.93]
+                              },
+                              {
+                                name: 'E-Type',
+                                type: 'bar',
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#f9eed7'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [48.07]
+                              }
+                            ]
+                          };
+                          var option22 = {
+                              tooltip: {
+                              trigger: 'axis',
+                              axisPointer: {
+                                type: 'shadow'
+                              },
+                              formatter: function(params) {
+                                var total = 0;
+                                params.forEach(function(item) {
+                                  total += item.value;
+                                });
+                                return params[0].name + '<br/>' + params[0].seriesName + ': ' + (params[0].value / total * 100).toFixed(2) + '%' +
+                                      '<br/>' + params[1].seriesName + ': ' + (params[1].value / total * 100).toFixed(2) + '%';
+                              }
+                            },                            
+                            grid: {
+                              left: '3%',
+                              right: '4%',
+                              bottom: '20px',
+                              top: '20px',
+                              containLabel: true
+                            },
+                            xAxis: {
+                              type: 'value',
+                              axisLabel: {
+                                formatter: '{value}%',
+                                show: false
+                              }
+                            },
+                            yAxis: {
+                              type: 'category',
+                              data: ['N-Type VS S-Type']
+                            },
+                            series: [
+                              {
+                                name: 'N-Type',
+                                type: 'bar',
+                                barWidth: 50, 
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#f3dafe'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [48.17]
+                              },
+                              {
+                                name: 'S-Type',
+                                type: 'bar',
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#d49cec'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [51.83]
+                              }
+                            ]
+                          };
+                          var option23 = {
+                              tooltip: {
+                              trigger: 'axis',
+                              axisPointer: {
+                                type: 'shadow'
+                              },
+                              formatter: function(params) {
+                                var total = 0;
+                                params.forEach(function(item) {
+                                  total += item.value;
+                                });
+                                return params[0].name + '<br/>' + params[0].seriesName + ': ' + (params[0].value / total * 100).toFixed(2) + '%' +
+                                      '<br/>' + params[1].seriesName + ': ' + (params[1].value / total * 100).toFixed(2) + '%';
+                              }
+                            },                            
+                            grid: {
+                              left: '3%',
+                              right: '4%',
+                              bottom: '20px',
+                              top: '20px',
+                              containLabel: true
+                            },
+                            xAxis: {
+                              type: 'value',
+                              axisLabel: {
+                                formatter: '{value}%',
+                                show: false                              
+                              }
+                            },
+                            yAxis: {
+                              type: 'category',
+                              data: ['F-Type VS T-Type']
+                            },
+                            series: [
+                              {
+                                name: 'F-Type',
+                                type: 'bar',
+                                barWidth: 50, 
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#85dfe3'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [66.24]
+                              },
+                              {
+                                name: 'T-Type',
+                                type: 'bar',
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#cffdff'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [33.76]
+                              }
+                            ]
+                          };
+                          var option24 = {
+                              tooltip: {
+                              trigger: 'axis',
+                              axisPointer: {
+                                type: 'shadow'
+                              },
+                              formatter: function(params) {
+                                var total = 0;
+                                params.forEach(function(item) {
+                                  total += item.value;
+                                });
+                                return params[0].name + '<br/>' + params[0].seriesName + ': ' + (params[0].value / total * 100).toFixed(2) + '%' +
+                                      '<br/>' + params[1].seriesName + ': ' + (params[1].value / total * 100).toFixed(2) + '%';
+                              }
+                            },                            
+                            grid: {
+                              left: '3%',
+                              right: '4%',
+                              bottom: '20px',
+                              top: '20px',
+                              containLabel: true
+                            },
+                            xAxis: {
+                              type: 'value',
+                              axisLabel: {
+                                formatter: '{value}%',
+                                show: false
+                              }
+                            },
+                            yAxis: {
+                              type: 'category',
+                              data: ['J-Type VS P-Type']
+                            },
+                            series: [
+                              {
+                                name: 'J-Type',
+                                type: 'bar',
+                                barWidth: 50, 
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#c6f4de'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [47.88]
+                              },
+                              {
+                                name: 'P-Type',
+                                type: 'bar',
+                                stack: 'total',
+                                itemStyle: {
+                                  color: '#72cfa3'
+                                },
+                                label: {
+                                  show: true,
+                                  position: 'insideRight',
+                                  formatter: '{c}%'
+                                },
+                                data: [52.12]
+                              }
+                            ]
+                          };
+
+                          chart21.setOption(option21);
+                          chart22.setOption(option22);
+                          chart23.setOption(option23);
+                          chart24.setOption(option24);
+
+                          window.addEventListener('resize', function () {
+                            chart21.resize();
+                            chart22.resize();
+                            chart23.resize();
+                            chart24.resize();
+                          });
+                        </script>
+                      
+                      </div>
+
+                      <div class="tab-pane fade" id="chart3-content" role="tabpanel" aria-labelledby="chart3-tab">
+                        <!-- 标签3对应的内容 -->
+                        <h4><span class="text-gradient fw-bold">WordCloud Map</span></h4>
+                        <p>I-Tpye VS E-Type.</p>
+                        <div class="image-container">
+                          <img src="../static/image/ciyun1.jpg" alt="I-Type">
+                          <img src="../static/image/ciyun2.jpg" alt="E-Type">
+                        </div>
+                        <style>
+                          .image-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                          }
+                      
+                          .image-container img {
+                            width: 48%; 
+                            margin: 0 1%;
+                          }
+                        </style>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                    
+        </section>
+
+
+              
+
+
+          </div>
+          <!--    返回顶端按钮-->
+          <button class="btn scroll-to-top" data-scroll-top="data-scroll-top"><span class="uil uil-angle-up text-white"></span></button>
+          
+          <!--    Footer-->
+          <footer class="Footer" style="background-image: url('../static/image/footer.png')">
+            <div class="pb-x1 px-3 px-lg-0">
+              <div class="container">
+                <div class="row align-items-end g-4 g-sm-6">
+                  <div class="col-12 col-md-4">
+                    <div class="row g-4 g-sm-6 g-md-0">
+                      <div class="col-6 col-md-12 mb-md-7">
+                        <h3 class="fs-9 fs-md-8 fw-bold mb-3" style="color: #FFF0D3;">Follow Us At</h3>
+                        <div class="d-flex align-items-center"> <a class="social-icon me-2" href="#!"><span class="uil uil-facebook fs-8"></span></a><a class="social-icon me-2" href="#!"><span class="uil uil-linkedin fs-8"></span></a><a class="social-icon me-2" href="#!"><span class="uil uil-youtube fs-8"></span></a><a class="social-icon" href="#!"><span class="uil uil-twitter fs-8"></span></a></div>
+                      </div>
+                      <div class="col-6 col-md-12">
+                        <div class="mb-3">
+                          <p class="fs-9 fs-md-8 fw-bold lh-nomal mb-0" style="color: #FFF0D3;"> Contact </p>
+                        </div>
+                        <div class="fs-10 fs-md-9">
+                          <p class="mb-0 text-white opacity-70"> MSc. in New Media</p>
+                          <p class="mb-0 text-white opacity-70"> Chinese University of Hong Kong</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4 offset-md-8">
+                    <div class="text-md-end"><a class="cursor-pointer" href=""><img class="img-fluid" src="../static/image/footer_logo.png" alt="" /></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/theme.js"></script>
+
+  </body>
+
+</html>
