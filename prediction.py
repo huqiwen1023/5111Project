@@ -37,6 +37,20 @@ model3 = SGDClassifier()
 model3.fit(X_train, y_train)
 y_predicted = model3.predict(X_test)
 
+#model4-SVM very very slow
+# from sklearn import svm
+# from sklearn.metrics import classification_report
+# model4 = svm.SVC()
+# model4.fit(X_train, y_train)
+# y_predicted = model4.predict(X_test)
+
+# #model5-KNeighbors very very slow
+# from sklearn.neighbors import KNeighborsClassifier
+# from sklearn.metrics import classification_report
+# model4 = KNeighborsClassifier()
+# model4.fit(X_train, y_train)
+# y_predicted = model4.predict(X_test)
+
 #分类结果
 print('Score： ',model3.score(X_test, y_test))
 print(classification_report(y_test, y_predicted))

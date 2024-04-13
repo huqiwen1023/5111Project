@@ -31,7 +31,3 @@
         ".vscode{,/**}"
     ]
 }
-
-{
-  "azureFunctions.deployFunctionTimeout": 600
-}
